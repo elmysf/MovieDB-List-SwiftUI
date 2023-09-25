@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		723C19BA2AC19A840091D13F /* MovSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19B92AC19A840091D13F /* MovSearchApp.swift */; };
+		723C19BC2AC19A840091D13F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19BB2AC19A840091D13F /* ContentView.swift */; };
+		723C19BE2AC19A860091D13F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 723C19BD2AC19A860091D13F /* Assets.xcassets */; };
+		723C19C12AC19A860091D13F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 723C19C02AC19A860091D13F /* Preview Assets.xcassets */; };
+		723C19C32AC19A860091D13F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19C22AC19A860091D13F /* Persistence.swift */; };
+		723C19C62AC19A860091D13F /* MovSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 723C19C42AC19A860091D13F /* MovSearch.xcdatamodeld */; };
+		723C19D02AC19A870091D13F /* MovSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19CF2AC19A870091D13F /* MovSearchTests.swift */; };
+		723C19DA2AC19A870091D13F /* MovSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19D92AC19A870091D13F /* MovSearchUITests.swift */; };
+		723C19DC2AC19A870091D13F /* MovSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723C19DB2AC19A870091D13F /* MovSearchUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		723C19CC2AC19A870091D13F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 723C19AE2AC19A840091D13F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 723C19B52AC19A840091D13F;
+			remoteInfo = MovSearch;
+		};
+		723C19D62AC19A870091D13F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 723C19AE2AC19A840091D13F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 723C19B52AC19A840091D13F;
+			remoteInfo = MovSearch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		723C19B62AC19A840091D13F /* MovSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		723C19B92AC19A840091D13F /* MovSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovSearchApp.swift; sourceTree = "<group>"; };
+		723C19BB2AC19A840091D13F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		723C19BD2AC19A860091D13F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		723C19C02AC19A860091D13F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		723C19C22AC19A860091D13F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		723C19C52AC19A860091D13F /* MovSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovSearch.xcdatamodel; sourceTree = "<group>"; };
+		723C19CB2AC19A870091D13F /* MovSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		723C19CF2AC19A870091D13F /* MovSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovSearchTests.swift; sourceTree = "<group>"; };
+		723C19D52AC19A870091D13F /* MovSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		723C19D92AC19A870091D13F /* MovSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovSearchUITests.swift; sourceTree = "<group>"; };
+		723C19DB2AC19A870091D13F /* MovSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		723C19B32AC19A840091D13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19C82AC19A870091D13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19D22AC19A870091D13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		723C19AD2AC19A840091D13F = {
+			isa = PBXGroup;
+			children = (
+				723C19B82AC19A840091D13F /* MovSearch */,
+				723C19CE2AC19A870091D13F /* MovSearchTests */,
+				723C19D82AC19A870091D13F /* MovSearchUITests */,
+				723C19B72AC19A840091D13F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		723C19B72AC19A840091D13F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				723C19B62AC19A840091D13F /* MovSearch.app */,
+				723C19CB2AC19A870091D13F /* MovSearchTests.xctest */,
+				723C19D52AC19A870091D13F /* MovSearchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		723C19B82AC19A840091D13F /* MovSearch */ = {
+			isa = PBXGroup;
+			children = (
+				723C19B92AC19A840091D13F /* MovSearchApp.swift */,
+				723C19BB2AC19A840091D13F /* ContentView.swift */,
+				723C19BD2AC19A860091D13F /* Assets.xcassets */,
+				723C19C22AC19A860091D13F /* Persistence.swift */,
+				723C19C42AC19A860091D13F /* MovSearch.xcdatamodeld */,
+				723C19BF2AC19A860091D13F /* Preview Content */,
+			);
+			path = MovSearch;
+			sourceTree = "<group>";
+		};
+		723C19BF2AC19A860091D13F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				723C19C02AC19A860091D13F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		723C19CE2AC19A870091D13F /* MovSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				723C19CF2AC19A870091D13F /* MovSearchTests.swift */,
+			);
+			path = MovSearchTests;
+			sourceTree = "<group>";
+		};
+		723C19D82AC19A870091D13F /* MovSearchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				723C19D92AC19A870091D13F /* MovSearchUITests.swift */,
+				723C19DB2AC19A870091D13F /* MovSearchUITestsLaunchTests.swift */,
+			);
+			path = MovSearchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		723C19B52AC19A840091D13F /* MovSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 723C19DF2AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearch" */;
+			buildPhases = (
+				723C19B22AC19A840091D13F /* Sources */,
+				723C19B32AC19A840091D13F /* Frameworks */,
+				723C19B42AC19A840091D13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovSearch;
+			productName = MovSearch;
+			productReference = 723C19B62AC19A840091D13F /* MovSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		723C19CA2AC19A870091D13F /* MovSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 723C19E22AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearchTests" */;
+			buildPhases = (
+				723C19C72AC19A870091D13F /* Sources */,
+				723C19C82AC19A870091D13F /* Frameworks */,
+				723C19C92AC19A870091D13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				723C19CD2AC19A870091D13F /* PBXTargetDependency */,
+			);
+			name = MovSearchTests;
+			productName = MovSearchTests;
+			productReference = 723C19CB2AC19A870091D13F /* MovSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		723C19D42AC19A870091D13F /* MovSearchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 723C19E52AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearchUITests" */;
+			buildPhases = (
+				723C19D12AC19A870091D13F /* Sources */,
+				723C19D22AC19A870091D13F /* Frameworks */,
+				723C19D32AC19A870091D13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				723C19D72AC19A870091D13F /* PBXTargetDependency */,
+			);
+			name = MovSearchUITests;
+			productName = MovSearchUITests;
+			productReference = 723C19D52AC19A870091D13F /* MovSearchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		723C19AE2AC19A840091D13F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					723C19B52AC19A840091D13F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					723C19CA2AC19A870091D13F = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 723C19B52AC19A840091D13F;
+					};
+					723C19D42AC19A870091D13F = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 723C19B52AC19A840091D13F;
+					};
+				};
+			};
+			buildConfigurationList = 723C19B12AC19A840091D13F /* Build configuration list for PBXProject "MovSearch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 723C19AD2AC19A840091D13F;
+			productRefGroup = 723C19B72AC19A840091D13F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				723C19B52AC19A840091D13F /* MovSearch */,
+				723C19CA2AC19A870091D13F /* MovSearchTests */,
+				723C19D42AC19A870091D13F /* MovSearchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		723C19B42AC19A840091D13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				723C19C12AC19A860091D13F /* Preview Assets.xcassets in Resources */,
+				723C19BE2AC19A860091D13F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19C92AC19A870091D13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19D32AC19A870091D13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		723C19B22AC19A840091D13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				723C19C32AC19A860091D13F /* Persistence.swift in Sources */,
+				723C19BC2AC19A840091D13F /* ContentView.swift in Sources */,
+				723C19C62AC19A860091D13F /* MovSearch.xcdatamodeld in Sources */,
+				723C19BA2AC19A840091D13F /* MovSearchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19C72AC19A870091D13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				723C19D02AC19A870091D13F /* MovSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		723C19D12AC19A870091D13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				723C19DA2AC19A870091D13F /* MovSearchUITests.swift in Sources */,
+				723C19DC2AC19A870091D13F /* MovSearchUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		723C19CD2AC19A870091D13F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 723C19B52AC19A840091D13F /* MovSearch */;
+			targetProxy = 723C19CC2AC19A870091D13F /* PBXContainerItemProxy */;
+		};
+		723C19D72AC19A870091D13F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 723C19B52AC19A840091D13F /* MovSearch */;
+			targetProxy = 723C19D62AC19A870091D13F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		723C19DD2AC19A870091D13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		723C19DE2AC19A870091D13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		723C19E02AC19A870091D13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MovSearch/Preview Content\"";
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		723C19E12AC19A870091D13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MovSearch/Preview Content\"";
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		723C19E32AC19A870091D13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovSearch";
+			};
+			name = Debug;
+		};
+		723C19E42AC19A870091D13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MovSearch";
+			};
+			name = Release;
+		};
+		723C19E62AC19A870091D13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovSearch;
+			};
+			name = Debug;
+		};
+		723C19E72AC19A870091D13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T6A37YY89;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.20past30.MovSearchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MovSearch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		723C19B12AC19A840091D13F /* Build configuration list for PBXProject "MovSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				723C19DD2AC19A870091D13F /* Debug */,
+				723C19DE2AC19A870091D13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		723C19DF2AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				723C19E02AC19A870091D13F /* Debug */,
+				723C19E12AC19A870091D13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		723C19E22AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				723C19E32AC19A870091D13F /* Debug */,
+				723C19E42AC19A870091D13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		723C19E52AC19A870091D13F /* Build configuration list for PBXNativeTarget "MovSearchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				723C19E62AC19A870091D13F /* Debug */,
+				723C19E72AC19A870091D13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		723C19C42AC19A860091D13F /* MovSearch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				723C19C52AC19A860091D13F /* MovSearch.xcdatamodel */,
+			);
+			currentVersion = 723C19C52AC19A860091D13F /* MovSearch.xcdatamodel */;
+			path = MovSearch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 723C19AE2AC19A840091D13F /* Project object */;
+}
