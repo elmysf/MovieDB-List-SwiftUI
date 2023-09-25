@@ -24,7 +24,7 @@ It's was developed with Swift and SwiftUI working on iOS 14+.
 * Network
 * [Security (Keychain)](https://github.com/kishikawakatsumi/KeychainAccess.git)<br>
 * [AsyncCompatibilityKit)](https://github.com/JohnSundell/AsyncCompatibilityKit.git)<br>
-* [NukeUI]((https://github.com/kean/NukeUI.git)https://github.com/kean/NukeUI.git)<br>
+* [NukeUI](https://github.com/kean/NukeUI.git)<br>
 
   ## Objective
 - [x] Showing List of Nowplaying Movie  
