@@ -3,7 +3,7 @@
 
 This iOS app provides information of movies with [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction)  like top rated movies,trending movies, upcoming and nowplaying. You can sign in with your account and add your movies as favorite.
 
-It's was developed with Swift and SwiftUI working on iOS 14+.
+It's was developed with Swift and SwiftUI working on iOS 15+.
 
 
 ## Features:
