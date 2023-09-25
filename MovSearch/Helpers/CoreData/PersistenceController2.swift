@@ -1,56 +1,120 @@
 //
-//  Persistence.swift
+//  PersistenceController2.swift
 //  MovSearch
 //
 //  Created by Sufiandy Elmy on 25/09/23.
 //
 
 import CoreData
+import SwiftUI
 
-struct PersistenceController {
-    static let shared = PersistenceController()
+final class PersistenceController2 {
+    static let shared = PersistenceController2()
+    
+    private init(){}
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
-    let container: NSPersistentContainer
-
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "MovSearch")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+    lazy var container: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "MovieCDModel")
+        container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         container.viewContext.automaticallyMergesChangesFromParent = true
+        return container
+    }()
+}
+
+
+extension PersistenceController2{
+
+    func importMovies(from movies: [FullMovieModel], category: MovieCategory) async throws {
+        
+        let backgroundContext = newTaskContext()
+        
+        if #available(iOS 15.0, *) {
+            try await backgroundContext.perform{
+                
+                for movi in movies{
+                    let movie = MovieModelCD(context: backgroundContext)
+                    movie.genres = movi.genres.first?.name ?? "Unknown"
+                    movie.voteCount = Int64(movi.voteCount)
+                    movie.voteAverage = movi.voteAverage
+                    movie.releaseDate = movi.releaseDate
+                    movie.overview = movi.overview
+                    movie.posterPath = movi.posterPath
+                    movie.popularity = movi.popularity
+                    movie.runtime = Int64(movi.runtime ?? 0)
+                    movie.id = Int64(movi.id)
+                    movie.budget = Int64(movi.budget)
+                    movie.title = movi.title
+                    movie.revenue = Int64(movi.revenue)
+                    movie.tagline = movi.tagline
+                    movie.credits  = movi.credits
+                    movie.category = category
+                }
+                
+                if backgroundContext.hasChanges{
+                    do {
+                        try backgroundContext.save()
+                        print("Successfully saved movies")
+                    } catch  {
+                        throw CoreDataError.savingError
+                    }
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
+    
+    private func newTaskContext() -> NSManagedObjectContext {
+        let taskContext = container.newBackgroundContext()
+        taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return taskContext
+    }
+    
+}
+
+extension MovieModelCD {
+    
+    var credits : Credits {
+        get {
+            return (try? JSONDecoder().decode(Credits.self, from: Data(credits_!.utf8))) ?? Credits(cast: [], crew: [])
+        }
+        set {
+           do {
+               let crewTest = try JSONEncoder().encode(newValue)
+               credits_ = String(data: crewTest, encoding:.utf8)!
+           } catch { credits_ = "" }
+        }
+    }
+    
+    var directors: [Cast2] {
+        credits.crew.filter { $0.job!.lowercased() == "director" }
+    }
+    
+    var producers: [Cast2] {
+        credits.crew.filter { $0.job!.lowercased() == "producer" }
+    }
+    
+    var cast:[Cast2]{
+        credits.cast
+    }
+    
+    var category: MovieCategory {
+        get {
+            MovieCategory(rawValue: category_!) ?? .unknown
+        }
+        set {
+            category_ = newValue.rawValue
+        }
+    }
+    
+    
+    
+}
+
+enum MovieCategory: String {
+    case popular, search, topRated, unknown, nowPlaying, upcoming
 }

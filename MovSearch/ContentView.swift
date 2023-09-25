@@ -6,81 +6,124 @@
 //
 
 import SwiftUI
-import CoreData
+
+enum Tab: String {
+    case Home
+    case Profile
+    case search
+}
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
+    
+    @EnvironmentObject private var movieVM: MoviesViewModel
+    @EnvironmentObject private var userVM: UserViewModel
+    @EnvironmentObject private var networkVM: NetworkViewModel
+    @AppStorage("selectedTab") private var selectedTab: Tab = .Home
+    
+    @AppStorage("firsTimeInApp") private var firsTimeInApp: Bool = true
+    
+    
+    @State private var noInternet = false
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+        GeometryReader{ g in
+            TabView(selection: $selectedTab){
+                        MovieView()
+                    .tabItem {
+                        Image(systemName: "film")
+                        Text("Movie")
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    .tag(Tab.Home)
+                    .alert(isPresented: $movieVM.showAlert) {
+                        Alert(title: Text("Information"),
+                              message: Text(movieVM.alertMessage)
+                        )
                     }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                    .tag(Tab.search)
+                    .alert(isPresented: $movieVM.showAlert) {
+                        Alert(title: Text("Information"), message: Text(movieVM.alertMessage))
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("Profile")
+                    }
+                    .tag(Tab.Profile)
+                    .alert(isPresented: $userVM.showAlert) {
+                        Alert(title: Text("Information"), message: Text(userVM.alertMessage))
+                    }
+               
+            }
+            .isPortrait(g.size.height > g.size.width)
+            .onAppear {
+                if firsTimeInApp {
+                    Task{
+                         await firstTask()
+                         firsTimeInApp = false
+                     }
+                }else{
+                    Task {
+                        await getUser()
+                    }
+
                 }
+
             }
-            Text("Select an item")
+            .offset(y: noInternet ? -30 : 0)
+            
+            NoInternetBannerView(status: noInternet, geometryProxy: g)
+            
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        .onReceive(networkVM.$noInternet){ int in
+            withAnimation {
+                noInternet = int
             }
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+extension ContentView{
+    
+    private func firstTask() async {
+        if networkVM.noWifinoCelularData == false {
+    
+            print("First time in the APP")
+            _ =  await withTaskGroup(of: Void.self, body: { taskgroup in
+                taskgroup.addTask {
+                    await movieVM.fetchMovies(of: .popularMovies)
+                }
+                taskgroup.addTask {
+                    await movieVM.fetchMovies(of: .topRatedMovies)
+                }
+                taskgroup.addTask {
+                    await movieVM.fetchMovies(of: .nowPlayingMovies)
+                }
+                taskgroup.addTask {
+                    await movieVM.fetchMovies(of: .upcomingMovies)
+                }
+                taskgroup.addTask {
+                    await getUser()
+                }
+            })
+        }else{
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
+            await firstTask()
+        }
+    }
+
+    func getUser() async {
+            let isUserLoggedIn = try?  userVM.keychainM.getSessionID() != ""
+            guard isUserLoggedIn != nil, networkVM.noInternet == false else{return}
+            if  userVM.user == nil && isUserLoggedIn!  {
+                    await userVM.getUserInfo()
+                    guard userVM.user != nil else {return}
+                    await movieVM.fetchFavoritesMovies(accID: "\(userVM.user!.id)")
+            }
+    }
 }
