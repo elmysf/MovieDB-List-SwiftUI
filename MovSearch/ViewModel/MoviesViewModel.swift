@@ -34,7 +34,6 @@ final class MoviesViewModel: NSObject, ObservableObject {
     }
     
     
-    //MARK: Permite poner o sacar de favoritos una película
     @MainActor func setFavoriteMovie(accID: String, idMovie: Int, favorite: Bool) async -> Bool {
         
         var result = false
@@ -124,7 +123,6 @@ final class MoviesViewModel: NSObject, ObservableObject {
         }
     }
     
-    //MARK: Función que carga los errores si los hubiere
     @MainActor private func loadError(_ error: Error){
         isLoading = false
         alertMessage = error.localizedDescription
